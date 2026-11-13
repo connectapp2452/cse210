@@ -1,0 +1,25 @@
+CSE 210 W02 Assignment: Explain Abstraction
+
+What Abstraction Means
+
+To me, abstraction means taking something complicated and presenting only the important parts in a simpler way. It hides details that a person using the program does not need to worry about. In programming, classes and methods help us create abstractions. A class can keep related information and actions together, and a method can give a simple name to a task that may require several steps inside.
+
+Why Abstraction Is Helpful
+
+Abstraction makes a program easier to understand because I can focus on what a part of the program does instead of every detail of how it does it. It also makes programs easier to update. For example, I can change how my journal saves information inside the Journal class without changing every part of the program that asks to save. Classes and methods can also be reused, which means I do not have to repeat the same work in many places.
+
+A Real-World Example
+
+Think about ordering food at a restaurant. I can look at a menu, choose a meal, and tell the server what I want. I do not need to know how the cook prepares it, what tools are used, or how the kitchen is organized. The menu gives me a simple way to request food while hiding the complicated work behind it.
+
+My Journal Program uses a similar idea. The Program class can ask the Journal object to display or save entries. The Journal class handles the details, such as looping through entries and writing information to a file. The program can request the task without doing all those steps itself.
+
+Code Example from My Journal Program
+
+    Journal journal = new Journal();
+    string fileName = "myJournal.txt";
+    journal.SaveToFile(fileName);
+    journal.LoadFromFile(fileName);
+    journal.Display();
+
+In this example, assume the journal already has entries to save. The first line creates a Journal object, and the next line gives the file a name. The method calls are simple instructions: save entries, load them, and display them. The file must exist before it is loaded; in this example, SaveToFile creates it first. The code using these methods does not need to know how the file is opened or how the date, prompt, and response are separated with the "~|~" symbol. Those details are handled inside the Journal class. This is abstraction: the methods provide a simple way to use the journal while hiding the steps that make those actions work.
